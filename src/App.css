@@ -1,0 +1,44 @@
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 20px;
+  animation: pageEnter 0.35s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-footer {
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-warm);
+}
+
+.app-footer p {
+  font-size: 0.68rem;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 18px 14px 28px;
+  }
+}

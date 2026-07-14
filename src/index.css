@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  /* 暖系底色 */
+  --bg: #FAF7F2;
+  --bg-linen: #F0EBE3;
+  --surface: #FFFCF8;
+  --surface-muted: #F5F0E8;
+  --desk-surface: #EDE6DA;
+
+  /* 边框与分割 */
+  --border: #E0D8CC;
+  --border-warm: #D4C9B8;
+  --border-strong: #C4B8A4;
+
+  /* 文字 */
+  --text-primary: #3D3429;
+  --text-secondary: #6B5E4F;
+  --text-tertiary: #9A8B78;
+
+  /* 暖色强调 */
+  --warm-accent: #B8956B;
+  --warm-accent-soft: rgba(184, 149, 107, 0.15);
+  --warm-copper: #A08060;
+
+  /* 收纳桶 */
+  --canvas-color: #E8E0D4;
+  --canvas-border: #C8BAA8;
+  --canvas-rim: #D8CEC0;
+
+  /* 圆角与阴影 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-warm: 0 2px 12px rgba(80, 60, 40, 0.06);
+  --shadow-soft: 0 4px 20px rgba(80, 60, 40, 0.08);
+
+  /* 字体 */
+  --font-sans: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 85% 10%, rgba(255, 248, 235, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 80%, rgba(230, 220, 200, 0.3) 0%, transparent 40%);
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  font-family: var(--font-sans);
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-warm);
+}
+
+.section-header h2 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+}
+
+.section-count {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.empty-hint {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}

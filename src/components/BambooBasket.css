@@ -1,0 +1,134 @@
+.archive-cabinet {
+  background: var(--surface);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-warm);
+}
+
+.archive-cabinet h2 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.cabinet-desc {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin: 0 0 20px;
+}
+
+.cabinet-empty-state {
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.cabinet-empty-shelf {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shelf-slot {
+  width: 72px;
+  height: 56px;
+  background: var(--surface-muted);
+  border: 1px dashed var(--border-warm);
+  border-radius: var(--radius-sm);
+}
+
+.cabinet-empty-state p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.cabinet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.archive-box {
+  background: rgba(255, 252, 248, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-warm);
+}
+
+.archive-box-lid {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.archive-box-body {
+  padding: 14px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(237,230,218,0.3));
+}
+
+.archive-clips-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.archive-clip-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.archive-clip-col .ticket-clip-body {
+  transform: scale(0.75);
+}
+
+.archive-clip-col .ticket-clip-label {
+  font-size: 0.5rem;
+}
+
+.archive-mini-stack {
+  position: relative;
+  width: 36px;
+  height: 48px;
+  margin-top: 2px;
+}
+
+.archive-stack-layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.archive-box-info {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.archive-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--warm-accent);
+}
+
+.archive-date {
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 400px) {
+  .archive-clips-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}

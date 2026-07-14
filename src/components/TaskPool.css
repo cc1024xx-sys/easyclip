@@ -1,0 +1,58 @@
+.task-pool {
+  background: var(--surface);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-warm);
+  position: relative;
+}
+
+.task-pool-body {
+  position: relative;
+  margin-top: 18px;
+  min-height: 200px;
+  padding-bottom: 72px;
+}
+
+.task-pool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 18px;
+}
+
+.empty-pool {
+  width: 100%;
+  text-align: center;
+  padding: 56px 20px;
+  border: 1px dashed var(--border-warm);
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+}
+
+.empty-pool p:first-child {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.task-pool-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-warm);
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}
+
+.task-pool-stats strong {
+  font-weight: 600;
+  color: var(--warm-accent);
+}
+
+.task-pool-stats-sep {
+  opacity: 0.5;
+}

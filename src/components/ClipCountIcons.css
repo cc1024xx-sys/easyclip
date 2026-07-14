@@ -1,0 +1,75 @@
+.clip-count-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 5px;
+  min-height: 28px;
+  flex: 1;
+  min-width: 0;
+}
+
+.clip-count-icons--empty {
+  opacity: 0.45;
+}
+
+.clip-count-icon {
+  width: 18px;
+  height: 22px;
+  background: var(--icon-bg);
+  border: 1px solid var(--icon-border);
+  border-radius: 3px 4px 3px 2px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(80, 60, 40, 0.08);
+  animation: iconPop 0.25s ease backwards;
+  position: relative;
+}
+
+.clip-count-icon::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.5px solid var(--icon-border);
+  opacity: 0.6;
+}
+
+.clip-count-icon--ghost {
+  background: transparent;
+  border: 1px dashed var(--border-warm);
+  box-shadow: none;
+}
+
+.clip-count-icon--ghost::after {
+  display: none;
+}
+
+.clip-count-overflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 22px;
+  padding: 0 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  background: var(--surface-muted);
+  border: 1px dashed var(--border-warm);
+  border-radius: 3px;
+}
+
+@keyframes iconPop {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

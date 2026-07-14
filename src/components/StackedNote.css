@@ -1,0 +1,67 @@
+.stacked-note {
+  position: absolute;
+  left: 50%;
+  width: var(--note-size, 64px);
+  height: var(--note-size, 64px);
+  background: var(--note-bg);
+  border: 1px solid var(--note-border);
+  border-radius: 5px 7px 6px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px;
+  transform: translateX(calc(-50% + var(--stack-x))) translateY(var(--stack-y)) rotate(var(--stack-rotate));
+  box-shadow: 0 1px 3px rgba(80, 60, 40, 0.08);
+}
+
+.stacked-note::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.stacked-note--sm {
+  --note-size: 34px;
+  padding: 3px 2px;
+  max-width: 100%;
+}
+
+.stacked-note--md {
+  --note-size: 64px;
+}
+
+.stacked-note--lg {
+  --note-size: 76px;
+}
+
+.stacked-note-title {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.stacked-note--sm .stacked-note-title {
+  font-size: 0.42rem;
+  font-weight: 500;
+  -webkit-line-clamp: 2;
+}
+
+.stacked-note--lg .stacked-note-title {
+  font-size: 0.65rem;
+}

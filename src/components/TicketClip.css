@@ -1,0 +1,132 @@
+.ticket-clip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+.ticket-clip-body {
+  position: relative;
+  width: 48px;
+  height: 34px;
+}
+
+.clip-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 12px;
+  border: 2px solid var(--clip-color);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: transparent;
+  z-index: 3;
+}
+
+.clip-arm {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 4px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--clip-color) 70%, #f5ebe0) 0%,
+    var(--clip-color) 45%,
+    color-mix(in srgb, var(--clip-color) 80%, #5a4a3a) 100%
+  );
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(80, 60, 40, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.clip-arm--top {
+  top: 11px;
+  z-index: 2;
+  transform-origin: left center;
+}
+
+.clip-arm--bottom {
+  top: 18px;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.clip-shadow {
+  position: absolute;
+  bottom: -2px;
+  left: 5px;
+  right: 5px;
+  height: 2px;
+  background: rgba(80, 60, 40, 0.1);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.ticket-clip-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.ticket-clip-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  background: var(--warm-accent);
+  color: white;
+  font-size: 0.58rem;
+  font-weight: 600;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-clip--compact .ticket-clip-body {
+  margin: 0 auto;
+}
+
+.ticket-clip--compact {
+  gap: 0;
+}
+
+.ticket-clip--open .clip-arm--top {
+  transform: rotate(-14deg) translateY(-2px);
+}
+
+.ticket-clip--open .clip-arm--bottom {
+  transform: rotate(8deg) translateY(2px);
+}
+
+.ticket-clip--bounce .ticket-clip-body {
+  animation: clipBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.ticket-clip--bounce .clip-arm--top {
+  animation: armSnap 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes clipBounce {
+  0% { transform: translateY(0); }
+  18% { transform: translateY(-5px) scale(1.03); }
+  38% { transform: translateY(2px) scale(0.97); }
+  58% { transform: translateY(-2px); }
+  78% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes armSnap {
+  0% { transform: rotate(0); }
+  12% { transform: rotate(-16deg) translateY(-3px); }
+  32% { transform: rotate(3deg) translateY(1px); }
+  52% { transform: rotate(-5deg); }
+  100% { transform: rotate(0); }
+}
